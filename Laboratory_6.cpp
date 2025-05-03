@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -44,7 +45,7 @@ public:
 
 int main()
 {
-    try 
+    try
     {
         Queue<int> intQueue;
 
@@ -60,8 +61,9 @@ int main()
         std::cout << intQueue.pop() << " deleted from queue" << std::endl;
     }
     catch (const std::runtime_error& e)
-        {
-            std::cerr << "Exception caught: " << e.what() << std::endl;
-        }
+    {
+        std::cerr << "Exception caught: " << e.what() << std::endl;
+    }
 
     return 0;
+}
