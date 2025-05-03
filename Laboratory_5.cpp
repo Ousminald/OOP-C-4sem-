@@ -6,35 +6,28 @@
 template <typename T>
 class Queue {
 private:
-    std::vector<T> items;
+    std::vector<T> data;
     size_t index = 0;
 
 public:
     void push(const T& item) {
-        items.push_back(item);
+        data.push_back(item);
         std::cout << "Added: " << item << " to queue\n";
     }
 
     T pop() {
-        T removedItem = items[index];
+        T removedItem = data[index];
         index++;
 
-        if (index > items.size() / 2) {
-            items.erase(items.begin(), items.begin() + index);
+        if (index > data.size() / 2) {
+            data.erase(data.begin(), data.begin() + index);
             index = 0;
         }
         return removedItem;
     }
 
-    T front() const {
-        if (empty()) {
-            throw std::runtime_error("Queue is empty");
-        }
-        return items[index];
-    }
-
     bool empty() const {
-        return index >= items.size();
+        return index >= data.size();
     }
 };
 
@@ -54,3 +47,4 @@ int main()
 
     return 0;
 }
+
